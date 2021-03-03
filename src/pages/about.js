@@ -8,10 +8,7 @@ const About = () => {
 
     return (
             <>
-        <Link to ='/'> Home </Link>&nbsp;
-        <Link to ='/about'> About </Link>
-        
-             <Layout pageTitle="About Vincent's awesome site!"></Layout>
+             <Layout pageTitle="About Vincent's awesome site!"/>
             </>
     )
 
