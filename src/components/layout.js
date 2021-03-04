@@ -10,9 +10,9 @@ const Layout = ( {pageTitle, children}) => {
         <Link to ='/about'> About </Link> &nbsp;
         <Link to ='/blog'> Blog</Link>
 
-            <h1 className={title}>
+            <h2 className={title}>
                 {pageTitle}
-            </h1>
+            </h2>
         </>
         )
 }

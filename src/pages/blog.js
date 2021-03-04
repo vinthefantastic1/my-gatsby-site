@@ -9,7 +9,11 @@ const BlogPage = ( { data }) => {
     console.log(data)
 
     return (
-        <div>
+        <>
+            <main className="container container-fluid" >
+                <div className="row">
+                    <div className="col col-md-12">
+                                  
             <Layout pageTitle="VL Blog Posts"/>
 
             <ul>
@@ -33,7 +37,10 @@ const BlogPage = ( { data }) => {
             )}
 
             </ul>
-        </div>
+            </div>
+            </div>
+            </main>
+        </>
     )
 
 }
