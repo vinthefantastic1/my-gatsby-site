@@ -24,6 +24,7 @@ const IndexPage = () => {
   return (
     <main >
 
+
       <title>Home Page</title>
       <Layout pageTitle="Vincent's Amazing Home Page"/>
 
@@ -35,6 +36,10 @@ const IndexPage = () => {
         Description...
         <h3>{data.site.siteMetadata.title}</h3>
       </div>
+      <div className="container">
+        <button className="btn btn-primary">Ok</button>
+      </div>
+
 
     </main>
   )
