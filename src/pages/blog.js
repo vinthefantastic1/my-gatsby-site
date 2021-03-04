@@ -6,32 +6,52 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const BlogPage = ( { data }) => {
 
-return (
-    <div>
-<Layout pageTitle="VL Blog Posts"/>
+    console.log(data)
 
-<ul>
-{data.allFile.nodes.map(node=> {
     return (
-        <li key={node.name}>
-            {node.name}
-        </li>
+        <div>
+            <Layout pageTitle="VL Blog Posts"/>
+
+            <ul>
+
+            { data.allMdx.nodes.map(node => {
+                console.log(node)
+                return (
+
+                        <li key={node.frontmatter.title}>
+                        <article>
+                            <h2>{node.frontmatter.title}</h2>
+                            <p>Posted: {node.frontmatter.date}</p>
+                            <MDXRenderer>{node.body}</MDXRenderer>
+                        </article>
+                        <hr />
+                        </li>
+
+                
+                ) 
+                }
+            )}
+
+            </ul>
+        </div>
     )
-})}
-</ul>
-</div>
-)
 
 }
 
-export const query =  graphql`
-query BlogPosts {
-  allFile(filter: { dir: { regex: "/blog/" } }) {
-    nodes {
-      name
+export const query = graphql`
+  {
+    allMdx {
+      nodes {
+        id
+        frontmatter {
+          date
+          example_boolean
+          title
+        }
+        body
+      }
     }
   }
-}
 `
 
 export default BlogPage
